@@ -30,5 +30,4 @@ jobs:
         run: npm install -g @stoplight/spectral-cli
 
       - name: Lint OpenAPI specs
-        run: |
-          docker run --rm -v ${PWD}:/specs  -v ${PWD}/.spectral.yaml:/usr/src/spectral/.spectral.yaml stoplight/spectral lint "/specs/**/*.yaml" --ruleset spectral:oas
+        run: spectral link **/*.yaml
