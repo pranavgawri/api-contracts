@@ -31,4 +31,4 @@ jobs:
 
       - name: Lint OpenAPI specs
         run: |
-          docker run --rm -v ${PWD}:/specs  -v ${PWD}/.spectral.yaml:/.spectral.yaml stoplight/spectral lint "/specs/**/*.yaml" --ruleset spectral:oas
+          docker run --rm -v ${PWD}:/specs  -v ${PWD}/.spectral.yaml:/usr/src/spectral/.spectral.yaml stoplight/spectral lint "/specs/**/*.yaml" --ruleset spectral:oas
