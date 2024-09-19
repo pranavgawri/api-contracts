@@ -38,4 +38,4 @@ jobs:
           -v "$(pwd):/workspace" \
           -w /workspace \
           --entrypoint /bin/sh znsio/specmatic \
-          -c "git config --global --add safe.directory /workspace && java -jar /usr/src/app/specmatic.jar backwardCompatibilityCheck"     
+          -c "git config --global --add safe.directory /workspace && cd /workspace && java -jar /usr/src/app/specmatic.jar backwardCompatibilityCheck"     
