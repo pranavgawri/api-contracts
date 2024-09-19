@@ -31,3 +31,12 @@ jobs:
 
       - name: Lint OpenAPI specs
         run: spectral lint **/*.yaml
+
+      - name: Run OpenAPI Backward Compatibility Check
+        run: |
+          docker run --rm \
+          -v "${{ github.workspace }}:/api-contracts:rw" \
+          -w /api-contracts \
+          --entrypoint /bin/sh \
+          znsio/specmatic \
+          -c "git config --global --add safe.directory /api-contracts && java -jar /usr/src/app/specmatic.jar backwardCompatibilityCheck"
