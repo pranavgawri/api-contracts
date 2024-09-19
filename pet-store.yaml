@@ -28,7 +28,7 @@ paths:
                   - type
                 properties:
                   id:
-                    type: number
+                    type: string
                   name:
                     type: string
                   type:
