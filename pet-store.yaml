@@ -22,13 +22,12 @@ paths:
             application/json:
               schema:
                 required:
-                  - id
                   - name
                   - status
                   - type
                 properties:
                   id:
-                    type: string
+                    type: number
                   name:
                     type: string
                   type:
