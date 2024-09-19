@@ -22,6 +22,7 @@ paths:
             application/json:
               schema:
                 required:
+                  - id
                   - name
                   - status
                   - type
