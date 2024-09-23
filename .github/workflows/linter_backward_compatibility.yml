@@ -24,7 +24,8 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '16'
+      
 
       - name: Install OpenAPI linter
         run: npm install -g @stoplight/spectral-cli
@@ -49,7 +50,9 @@ jobs:
       - name: Run Specmatic Insights Github Build Reporter
         uses: znsio/specmatic-insights-build-reporter-github-action@v2.0.2
         with:
-          github-token: ${{ secrets.specmatic-insights }}
+          github-token: ${{ secrets.GH_REPOSITORY_TOKEN }}
+          specmatic-insights-host: https://insights.specmatic.io
+          specmatic-reports-dir: ./build/reports/specmatic
           org-id:  66e98ee05e232d36a28f7c6c
           branch-ref: ${{ github.ref }}
           branch-name: ${{ github.ref_name }}
