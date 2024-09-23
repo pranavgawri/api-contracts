@@ -26,6 +26,8 @@ jobs:
         with:
           node-version: '16'
       
+      - name: Install node-fetch
+        run: npm install node-fetch
 
       - name: Install OpenAPI linter
         run: npm install -g @stoplight/spectral-cli
