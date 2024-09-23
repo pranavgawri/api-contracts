@@ -49,7 +49,7 @@ jobs:
       - name: Run Specmatic Insights Github Build Reporter
         uses: znsio/specmatic-insights-build-reporter-github-action@v2.0.2
         with:
-          github-token: ${{ secrets.GH_REPOSITORY_TOKEN }}
+          github-token: ${{ secrets.specmatic-insights }}
           org-id:  66e98ee05e232d36a28f7c6c
           branch-ref: ${{ github.ref }}
           branch-name: ${{ github.ref_name }}
