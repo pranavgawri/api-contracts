@@ -2,9 +2,13 @@ openapi: 3.0.1
 info:
   title: Contract for the petstore service
   version: '1'
+tags:
+  - name: WIP
 paths:
   /pets/{petid}:
     get:
+      tags:
+        - WIP
       summary: Should be able to get a pet by petId
       parameters:
         - name: petid
