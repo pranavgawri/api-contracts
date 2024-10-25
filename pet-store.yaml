@@ -42,3 +42,94 @@ paths:
                     name: Scooby
                     type: Golden Retriever
                     status: Adopted
+  /users:
+    patch:
+      summary:  Update a user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id: 
+                  type: number
+                name: 
+                  type: string
+      responses:
+        '200':
+          description: When a user is updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+    post:
+      summary : add new user
+      description: this allows you to add new user, EOL.
+      operationId: somehting
+      requestBody:
+        description: request body for post /users
+        content:
+          applicatoin/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                department:
+                  type: string
+                designation:
+                  type: string
+            examples:
+              POST_1_EXAMPLE:
+                value: 
+                  name: Renuka Reddy
+                  department: HR
+                  designation: Maneger
+        required: true
+      responses:
+        '200':
+          description: For successful user creation
+          content:
+            application/json: 
+              schema: 
+                $ref: '#/components/schemas/User'
+              examples:
+                POST_1_EXAMPLE:
+                  value: 
+                    id: 2
+                    name: Renuka Reddy
+                    department: HR
+                    designation: Maneger
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        department:
+          type: string
+        designation:
+          type: string
+      required:
+        - id
+  examples:
+    FirstUserId:
+      value: 2
+    SecondUserId:
+      value: 6
+    FirstUserResponse:
+      value:  
+        name: John Doe
+        department: Sales
+        designation:  Sales Manager
+    SecondUserResponse:
+      value:
+        id: 3
+        name: Jane Doe
+        department: Marketing
+        designation:  Marketing Manager
+      
