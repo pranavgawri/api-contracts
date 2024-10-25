@@ -26,10 +26,7 @@ jobs:
         uses: tj-actions/changed-files@v34
         with:
           files: |
-            io/**/*.yaml
-            io/**/*.yml
-            io/**/*.json
-          files_ignore: kafka.yaml #skipping it as async is under private-beta
+            *.yaml
 
       - name: Install Spectral Linter
         if: steps.changed-files-specific.outputs.any_changed == 'true'
